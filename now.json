@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "just-ship-it",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    }
+  ],
+  "alias": "justshipit.xyz"
+}
