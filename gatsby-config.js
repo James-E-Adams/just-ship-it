@@ -59,10 +59,18 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: 'gatsby-plugin-typography',
+    //   options: {
+    //     pathToConfigModule: 'src/utils/typography',
+    //   },
+    // },
+    `gatsby-plugin-postcss`,
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: 'gatsby-plugin-purgecss',
       options: {
-        pathToConfigModule: 'src/utils/typography',
+        tailwind: true,
+        purgeOnly: ['src/css/style.css'], // Purge only tailwind
       },
     },
   ],

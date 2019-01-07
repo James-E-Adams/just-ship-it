@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
-import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -24,15 +23,11 @@ class BlogIndex extends React.Component {
           title={siteTitle}
         />
         {/* <Bio /> */}
-        {/* {posts.map(({ node }) => {
+        {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3 style={{}}>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
@@ -41,7 +36,7 @@ class BlogIndex extends React.Component {
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
-        })} */}
+        })}
       </Layout>
     )
   }
