@@ -38,6 +38,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-postcss',
+    // {
+    //   resolve: 'gatsby-plugin-purgecss',
+    //   options: {
+    //     tailwind: true,
+    //     purgeOnly: ['src/css/style.css'], // Purge only tailwind
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

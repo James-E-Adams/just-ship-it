@@ -3,67 +3,44 @@ import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
 import sailShip from '../assets/favicon.png'
+import '../styles/index.css'
+
+// const headerStyles = {
+//   background: 'linear-gradient(#ffafbd, #ffc3a0)',
+//   position: 'fixed',
+// }
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    // const rootPath = `${__PATH_PREFIX__}/`
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
+    let header = (
+      <h3
+        style={{
+          fontFamily: 'Montserrat, sans-serif',
+          // marginTop: 0,
+          // display: 'flex',
+          borderBottom: '1px solid black',
+          background: 'wheat',
+          width: '100%',
+          height: 50,
+          position: 'fixed',
+        }}
+        className="flex items-center pl-3"
+      >
+        <Link
           style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-            color: '#1F3B89',
-            textAlign: 'center',
+            boxShadow: 'none',
+            textDecoration: 'none',
+            color: 'inherit',
           }}
+          to={'/'}
         >
-          <img
-            src={sailShip}
-            alt={`Sail ship`}
-            style={{
-              marginRight: rhythm(1),
-              marginBottom: 0,
-              width: rhythm(2),
-              height: rhythm(2),
-            }}
-          />
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+          Justshipit.xyz
+        </Link>
+      </h3>
+    )
+
     return (
       <div
         style={{
@@ -71,12 +48,18 @@ class Layout extends React.Component {
           marginRight: 'auto',
           // maxWidth: rhythm(24),
           minHeight: '100vh',
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           background: 'linear-gradient(#ffafbd, #ffc3a0)',
         }}
       >
         {header}
+        {/* <div
+          style={{
+            // marginTop: 100,
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        > */}
         {children}
+        {/* </div> */}
       </div>
     )
   }
